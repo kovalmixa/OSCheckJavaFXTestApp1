@@ -1,4 +1,4 @@
-package javafxtest;
+package javafxtest.handlers;
 
 import java.io.IOException;
 

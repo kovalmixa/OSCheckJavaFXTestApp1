@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="239.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxtest.UIControllers.InterfaceController">
+<VBox prefHeight="239.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxtest.ui_controllers.OSMenuController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Button id="swichButton" fx:id="switchButton" layoutX="189.0" layoutY="277.0" mnemonicParsing="false" onAction="#handleSwitchButtonClick" prefHeight="63.0" prefWidth="262.0" text="Start OS check" />
             <AnchorPane fx:id="dataPane" layoutX="38.0" layoutY="14.0" prefHeight="226.0" prefWidth="591.0">
                <children>
                   <Label fx:id="bitnessLabel" layoutX="140.0" layoutY="1.0" text="0" />
                   <Label text="Bitness:" />
-                  <Label fx:id="cpuUsagePercLabel" layoutX="140.0" layoutY="167.0" text="0" />
-                  <Label layoutX="1.0" layoutY="167.0" prefHeight="18.0" prefWidth="138.0" text="CPU usage percentage:" />
                   <Label fx:id="domainNameLabel" layoutX="140.0" layoutY="18.0" text="0" />
                   <Label layoutY="18.0" prefHeight="18.0" prefWidth="92.0" text="Domain name:" />
                   <Label fx:id="familyNameLabel" layoutX="140.0" layoutY="36.0" text="0" />
@@ -24,8 +20,6 @@
                   <Label layoutX="1.0" layoutY="84.0" prefHeight="18.0" prefWidth="92.0" text="Total space:" />
                   <Label fx:id="freeSpaceLabel" layoutX="140.0" layoutY="105.0" text="0" />
                   <Label layoutX="1.0" layoutY="105.0" text="Free space:" />
-                  <Label layoutX="1.0" layoutY="149.0" prefHeight="18.0" prefWidth="138.0" text="CPU name:" />
-                  <Label fx:id="cpuNameLabel" layoutX="140.0" layoutY="150.0" text="0" />
                </children>
             </AnchorPane>
       </children>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="239.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxtest.ui_controllers.CpuInfoController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="192.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+      <children>
+            <AnchorPane fx:id="labelsPane" layoutX="24.0" layoutY="24.0" prefHeight="112.0" prefWidth="591.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="18.0" prefWidth="138.0" text="CPU name:" />
+                  <Label fx:id="cpuNameLabel" layoutX="176.0" layoutY="14.0" text="0" />
+                  <Label layoutX="14.0" layoutY="47.0" prefHeight="18.0" prefWidth="138.0" text="CPU physical cores:" />
+                  <Label fx:id="cpuPhCoreLabel" layoutX="176.0" layoutY="47.0" text="0" />
+                  <Label layoutX="14.0" layoutY="79.0" prefHeight="18.0" prefWidth="138.0" text="CPU logical cores:" />
+                  <Label fx:id="cpuLgCoreLabel" layoutX="176.0" layoutY="79.0" text="0" />
+               </children>
+            </AnchorPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

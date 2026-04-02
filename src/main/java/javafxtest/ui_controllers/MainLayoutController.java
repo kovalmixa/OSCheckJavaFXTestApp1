@@ -1,11 +1,9 @@
-package javafxtest.UIControllers;
+package javafxtest.ui_controllers;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
-import java.io.IOException;
-import javafxtest.ResourcesHandler;
+import javafxtest.handlers.ResourcesHandler;
 
 public class MainLayoutController {
     @FXML
@@ -13,20 +11,28 @@ public class MainLayoutController {
 
     @FXML
     public void initialize() {
-        showOSDetails();
+        showOSInformation();
     }
 
     @FXML
-    private void showOSDetails() {
-        ResourcesHandler resourcesHandler = ResourcesHandler.getInstance();
-        Parent root = resourcesHandler.loadFXML("OSDetails.fxml");
-        resourcesHandler.setupRootToAnchorPane(contentArea, root);
+    private void showOSInformation() {
+        openTab("OSInformation.fxml");
     }
 
     @FXML
-    private void showCPUDetails() {
+    private void showCpuInformation() {
+        openTab("CpuInformation.fxml");
+    }
+
+    @FXML
+    private void showCpuLoad() {
+        openTab("CpuLoad.fxml");
+    }
+    
+
+    public void openTab(String fxmlFile) {
         ResourcesHandler resourcesHandler = ResourcesHandler.getInstance();
-        Parent root = resourcesHandler.loadFXML("CPUDetails.fxml");
+        Parent root = resourcesHandler.loadFXML(fxmlFile);
         resourcesHandler.setupRootToAnchorPane(contentArea, root);
     }
 
