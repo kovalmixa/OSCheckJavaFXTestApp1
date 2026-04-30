@@ -29,6 +29,10 @@ public class MainLayoutController {
         openTab("CpuLoad.fxml");
     }
     
+    @FXML
+    private void showMemoryInformation() {
+        openTab("MemoryInformation.fxml");
+    }
 
     public void openTab(String fxmlFile) {
         ResourcesHandler resourcesHandler = ResourcesHandler.getInstance();

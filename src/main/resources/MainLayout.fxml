@@ -26,6 +26,7 @@
             </CustomMenuItem>
           </items>
         </MenuButton>
+            <Button mnemonicParsing="false" onAction="#showMemoryInformation" style="-fx-cursor: hand;" text="Memory" />
       </children>
     </HBox>
     <AnchorPane fx:id="contentArea" VBox.vgrow="ALWAYS" />

@@ -16,10 +16,6 @@
                   <Label layoutY="18.0" prefHeight="18.0" prefWidth="92.0" text="Domain name:" />
                   <Label fx:id="familyNameLabel" layoutX="140.0" layoutY="36.0" text="0" />
                   <Label layoutY="36.0" text="Family name:" />
-                  <Label fx:id="totalSpaceLabel" layoutX="140.0" layoutY="84.0" text="0" />
-                  <Label layoutX="1.0" layoutY="84.0" prefHeight="18.0" prefWidth="92.0" text="Total space:" />
-                  <Label fx:id="freeSpaceLabel" layoutX="140.0" layoutY="105.0" text="0" />
-                  <Label layoutX="1.0" layoutY="105.0" text="Free space:" />
                </children>
             </AnchorPane>
       </children>

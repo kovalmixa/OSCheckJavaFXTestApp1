@@ -12,10 +12,6 @@ public class OSMenuController {
     private Label domainNameLabel;
     @FXML
     private Label familyNameLabel;
-    @FXML
-    private Label totalSpaceLabel;
-    @FXML
-    private Label freeSpaceLabel;
 
     @FXML
     public void initialize() {
@@ -27,7 +23,5 @@ public class OSMenuController {
         bitnessLabel.setText(String.valueOf(data.bitness));
         domainNameLabel.setText(data.domainName);
         familyNameLabel.setText(data.familyName);
-        totalSpaceLabel.setText(String.valueOf(data.totalSpace) + "GB");
-        freeSpaceLabel.setText(String.valueOf(data.freeSpace) + "GB");
     }
 }
