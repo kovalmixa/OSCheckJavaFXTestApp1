@@ -3,28 +3,34 @@ package javafxtest.ui_controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafxtest.handlers.os_check_controller.OSCheckHandler;
-import javafxtest.handlers.os_check_controller.cpu_data.CpuStaticData;
+import javafxtest.handlers.pc_check_handlers.cpu.CpuStaticData;
+import javafxtest.handlers.pc_check_handlers.IDynamicData;
+import javafxtest.handlers.pc_check_handlers.cpu.CpuCheckHandler;
 
-public class CpuInfoController {
-    @FXML
+public class CpuInfoController extends PageUIController<CpuStaticData, IDynamicData>  {
+    @FXML 
     private AnchorPane labelsPane;
-
-    @FXML
+    @FXML 
     private Label cpuNameLabel;
-    @FXML
+    @FXML 
     private Label cpuPhCoreLabel;
-    @FXML
+    @FXML 
     private Label cpuLgCoreLabel;
 
-    @FXML
+    @FXML 
     public void initialize() throws Exception {
-        setCpuStaticData(OSCheckHandler.getInstance().getCpuStaticData());
+        setStaticData(CpuCheckHandler.getInstance().getStaticData());
     }
-    
-    void setCpuStaticData(CpuStaticData data){
+
+    @Override 
+    protected void setStaticData(CpuStaticData data){
         cpuNameLabel.setText(data.cpuName);
         cpuPhCoreLabel.setText(String.valueOf(data.physicalCores));
         cpuLgCoreLabel.setText(String.valueOf(data.logicalCores));
+    }
+
+    @Override 
+    protected void setDynamicData(IDynamicData data) {
+
     }
 }

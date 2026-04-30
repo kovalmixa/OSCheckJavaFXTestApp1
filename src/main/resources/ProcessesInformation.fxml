@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="239.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxtest.ui_controllers.ProcessesInformationController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="192.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="processTable" layoutX="88.0" layoutY="19.0" prefHeight="200.0" prefWidth="463.0" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

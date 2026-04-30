@@ -1,67 +1,38 @@
 package javafxtest.ui_controllers;
 
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.stage.Stage;
-import javafxtest.handlers.os_check_controller.OSCheckHandler;
-import javafxtest.handlers.os_check_controller.cpu_data.CpuDynamicData;
+import javafxtest.handlers.pc_check_handlers.cpu.CpuDynamicData;
+import javafxtest.handlers.pc_check_handlers.IStaticData;
+import javafxtest.handlers.pc_check_handlers.cpu.CpuCheckHandler;
 
-public class CpuLoadController {
-    @FXML
+public class CpuLoadController extends PageUIController<IStaticData, CpuDynamicData>{
+    @FXML 
     private Label cpuUsagePercLabel;
-    @FXML
+    @FXML 
     private ProgressBar cpuUsageProgressBar;
 
-    private Thread thread;
-
-    @FXML
+    @FXML 
     public void initialize() throws Exception {
-         startThread();
-
-        Platform.runLater(() -> {
-            Stage stage = (Stage) cpuUsageProgressBar.getScene().getWindow();
-            stage.setOnCloseRequest(event -> {
-                stopThread();
-                System.out.println("The thread was stopped.");
-            });
+        setupPageDynamicSetter(() -> {
+            try {
+                return CpuCheckHandler.getInstance().getDynamicData();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return null;
         });
     }
-    private void setCpuDynamicData(CpuDynamicData data){
+
+    @Override 
+    protected void setStaticData(IStaticData data) {
+
+    }
+
+    @Override 
+    protected void setDynamicData(CpuDynamicData data){
         cpuUsageProgressBar.setProgress(data.cpuLoadTicksPerc / 100);
         cpuUsagePercLabel.setText(String.format("%.2f", data.cpuLoadTicksPerc) + "%");
     }
-    //region Thead methods
-    private void startThread() {
-        thread = new Thread(() -> {
-            try {
-                while (!Thread.currentThread().isInterrupted()) {
-                    CpuDynamicData data = OSCheckHandler.getInstance().getCpuDynamicData();
-                    Platform.runLater(() -> { 
-                        setCpuDynamicData(data);
-                    });
-
-                    Thread.sleep(1000); 
-                }
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            } finally {
-                onThreadFinished();
-            }
-        });
-        thread.setDaemon(true);
-        thread.start();
-    }
-
-    private void stopThread() {
-        if (thread != null) {
-            thread.interrupt();
-        }
-    }
-
-    private void onThreadFinished() {
-        System.out.println("Thread is fully stoped.");
-    }
-    //endregion
 }

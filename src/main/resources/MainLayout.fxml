@@ -27,6 +27,7 @@
           </items>
         </MenuButton>
             <Button mnemonicParsing="false" onAction="#showMemoryInformation" style="-fx-cursor: hand;" text="Memory" />
+            <Button mnemonicParsing="false" onAction="#showProcessesInformation" style="-fx-cursor: hand;" text="Processes" />
       </children>
     </HBox>
     <AnchorPane fx:id="contentArea" VBox.vgrow="ALWAYS" />

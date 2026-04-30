@@ -2,26 +2,32 @@ package javafxtest.ui_controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafxtest.handlers.os_check_controller.OSCheckHandler;
-import javafxtest.handlers.os_check_controller.os_data.OSStaticData;
+import javafxtest.handlers.pc_check_handlers.os.*;
+import javafxtest.handlers.pc_check_handlers.os.OSCheckHandler;
+import javafxtest.handlers.pc_check_handlers.IDynamicData;
 
-public class OSMenuController {
-    @FXML
+public class OSMenuController extends PageUIController<OSStaticData, IDynamicData> {
+    @FXML 
     private Label bitnessLabel;
-    @FXML
+    @FXML 
     private Label domainNameLabel;
-    @FXML
+    @FXML 
     private Label familyNameLabel;
 
-    @FXML
+    @FXML 
     public void initialize() {
-        System.out.println("osdetailes instanitated");
-       setOSStaticData(OSCheckHandler.getInstance().getOSStaticData());
+        setStaticData(OSCheckHandler.getInstance().getStaticData());
     }
-    
-    private void setOSStaticData(OSStaticData data){
+
+    @Override 
+    protected void setStaticData(OSStaticData data){
         bitnessLabel.setText(String.valueOf(data.bitness));
         domainNameLabel.setText(data.domainName);
         familyNameLabel.setText(data.familyName);
     }
+
+    @Override 
+    protected void setDynamicData(IDynamicData dynamicData){
+
+    } 
 }

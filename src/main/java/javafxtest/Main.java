@@ -16,8 +16,10 @@ public class Main extends Application{
         ResourcesHandler resourcesHandler = ResourcesHandler.getInstance();
         Parent root = resourcesHandler.loadFXML("/MainLayout.fxml");
         Scene scene = new Scene(root);
+        stage.setOnCloseRequest(event -> { System.exit(0); });
         stage.setScene(scene);
         stage.setTitle("OS check App");
         stage.show();
+
     }
 }

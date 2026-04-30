@@ -6,32 +6,37 @@ import javafx.scene.layout.AnchorPane;
 import javafxtest.handlers.ResourcesHandler;
 
 public class MainLayoutController {
-    @FXML
+    @FXML 
     private AnchorPane contentArea;
 
-    @FXML
+    @FXML 
     public void initialize() {
         showOSInformation();
     }
 
-    @FXML
+    @FXML 
     private void showOSInformation() {
         openTab("OSInformation.fxml");
     }
 
-    @FXML
+    @FXML 
     private void showCpuInformation() {
         openTab("CpuInformation.fxml");
     }
 
-    @FXML
+    @FXML 
     private void showCpuLoad() {
         openTab("CpuLoad.fxml");
     }
     
-    @FXML
+    @FXML 
     private void showMemoryInformation() {
         openTab("MemoryInformation.fxml");
+    }
+
+    @FXML
+    private void showProcessesInformation(){
+        openTab("ProcessesInformation.fxml");
     }
 
     public void openTab(String fxmlFile) {
@@ -40,7 +45,7 @@ public class MainLayoutController {
         resourcesHandler.setupRootToAnchorPane(contentArea, root);
     }
 
-    @FXML
+    @FXML 
     private void handleSwitchButtonClick() {
         System.out.println("Checking OS...");
     }
