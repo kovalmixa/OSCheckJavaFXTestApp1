@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -8,7 +9,12 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="192.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
          <children>
-            <TableView fx:id="processTable" layoutX="88.0" layoutY="19.0" prefHeight="200.0" prefWidth="463.0" />
+            <TableView fx:id="processTable" layoutX="11.0" layoutY="19.0" prefHeight="220.0" prefWidth="625.0">
+               <columns>
+                  <TableColumn fx:id="processIdColumn" prefWidth="155.2000150680542" text="ProcessId" />
+                  <TableColumn fx:id="nameColumn" prefWidth="247.99998474121094" text="Name" />
+                  <TableColumn fx:id="usageColumn" prefWidth="222.4000244140625" text="Usage %" />
+               </columns></TableView>
          </children>
     </AnchorPane>
   </children>

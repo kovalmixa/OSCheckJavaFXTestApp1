@@ -26,9 +26,10 @@ public class ProcessCheckHandler extends CheckHandler{
     @Override
     public IDynamicData getDynamicData() throws InterruptedException {
         ProcessDynamicData processDynamicData = new ProcessDynamicData();
+        int logicalCores = Runtime.getRuntime().availableProcessors();
         processDynamicData.processes = os.getProcesses().stream()
             .map(pr -> new ProcessUnit(pr.getProcessID(), pr.getName(),
-                100d * pr.getProcessCpuLoadBetweenTicks(pr)){
+                100d * pr.getProcessCpuLoadBetweenTicks(pr) / logicalCores){
         }) .collect(Collectors.toList());;
         return processDynamicData;
     }
